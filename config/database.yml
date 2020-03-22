@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: elasticblog_development
+
+test:
+  <<: *default
+  database: elasticblog_test
+
+production:
+  <<: *default
+  database: elasticblog_production
+  username: elasticblog
+  password: <%= ENV['ELASTICBLOG_DATABASE_PASSWORD'] %>
