@@ -7,6 +7,7 @@ ruby '2.7.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
+gem 'ffaker'
 gem 'hamlit'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
@@ -15,7 +16,6 @@ gem 'webpacker', '~> 4.0'
 
 group :development, :test do
   gem 'pry'
-  gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'

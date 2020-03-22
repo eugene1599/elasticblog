@@ -10,13 +10,12 @@ AllCops:
     - 'vendor/**/*'
     - 'tmp/**/*'
 
-Metrics/LineLength:
+
+Layout/LineLength:
+  Enabled: true
   Max: 120
 
-Rails:
-  Enabled: true
-
-Documentation:
+Style/Documentation:
   Enabled: false
 
 Style/HashEachMethods:
