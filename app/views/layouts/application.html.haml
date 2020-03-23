@@ -1,0 +1,17 @@
+%html
+  %head
+    %title
+      Elasticblog
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application'
+  %body
+    .container
+      = render 'layouts/partials/header'
+    %main.container{:role => "main"}
+      .row
+        .col-md-8.blog-main
+          = yield
+        = render 'layouts/partials/sidebar'
+    = render 'layouts/partials/footer'
+    = javascript_pack_tag 'application'

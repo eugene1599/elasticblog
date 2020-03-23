@@ -1,0 +1,6 @@
+- if @articles.empty?
+  = t('articles.no_articles')
+- else
+  = render partial: "articles/partials/article", collection: @articles
+  %nav.blog-pagination
+    = pagy_bootstrap_nav(@pagy).html_safe

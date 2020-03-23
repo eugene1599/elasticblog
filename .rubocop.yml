@@ -9,6 +9,7 @@ AllCops:
     - 'db/**/*'
     - 'vendor/**/*'
     - 'tmp/**/*'
+    - 'node_modules/**/*'
 
 
 Layout/LineLength:
