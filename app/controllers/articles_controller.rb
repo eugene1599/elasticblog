@@ -2,6 +2,6 @@
 
 class ArticlesController < ApplicationController
   def index
-    @pagy, @articles = pagy(Article.all)
+    @pagy, @articles = pagy(ArticlesQuery.new(params).call.includes(:publishers))
   end
 end

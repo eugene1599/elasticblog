@@ -7,5 +7,7 @@ en:
     sign_up: Sign up
   shared:
     search: Search
+  search:
+    query: Query
   articles:
     no_articles: No articles

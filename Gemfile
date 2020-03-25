@@ -12,6 +12,7 @@ gem 'hamlit'
 gem 'pagy'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
+gem 'rack-mini-profiler'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'webpacker', '~> 4.0'
 
