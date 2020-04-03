@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesQuery
   def initialize(params = {}, relation = Article.all)
     @relation = relation
@@ -20,7 +22,7 @@ class ArticlesQuery
 
     scope
       .joins(:tags)
-      .where("articles.body LIKE :query OR articles.title LIKE :query OR tags.name LIKE :query", query: "%#{params[:q]}%")
+      .where('articles.body LIKE :query OR articles.title LIKE :query OR tags.name LIKE :query', query: "%#{params[:q]}%")
   end
 
   def filter_by_category(scope)

@@ -22,7 +22,7 @@ require 'pagy/extras/bootstrap'
 
 # Elasticsearch Rails extra: Paginate `ElasticsearchRails::Results` objects
 # See https://ddnexus.github.io/pagy/extras/elasticsearch_rails
-# require 'pagy/extras/elasticsearch_rails'
+require 'pagy/extras/elasticsearch_rails'
 
 # Searchkick extra: Paginate `Searchkick::Results` objects
 # See https://ddnexus.github.io/pagy/extras/searchkick

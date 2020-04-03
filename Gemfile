@@ -16,6 +16,10 @@ gem 'rack-mini-profiler'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'webpacker', '~> 4.0'
 
+# Search Engines
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 group :development, :test do
   gem 'pry'
   gem 'rubocop'

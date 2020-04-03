@@ -13,12 +13,11 @@
 .nav-scroller.py-1.mb-2
   %nav.nav.d-flex.justify-content-between
     - @categories.each do |category|
-      = link_to category.name, root_path(categories: category.id), class: 'p-2 text-muted'
+      = link_to category.name, root_path(categories: [category.id]), class: 'p-2 text-muted'
 .jumbotron.p-4.p-md-5.text-white.rounded.bg-dark
   .col-md-6.px-0
     %h1.display-4.font-italic= t('common.site_description_title')
     %p.lead.my-3= t('common.site_description')
-
 
 
 #exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}

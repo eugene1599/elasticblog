@@ -5,3 +5,11 @@
     by
     = article.formatted_publishers
   = article.body
+  - if article.tags
+    %p.blog-post-meta
+      = "#{t('.articles.tags')}:"
+      - article.tags.each do |tag|
+        %span.badge.badge-info
+          = tag.name
+  %p.blog-post-meta
+    = "Category: #{article.category.name}"
