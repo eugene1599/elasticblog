@@ -2,7 +2,7 @@
 
 class ArticlesController < ApplicationController
   def index
-    if params[:q] || params[:categories] || params[:publishers]
+    if search_params_passed?
       perform_search
     else
       @pagy, @articles = pagy(Article.all.includes(:publishers, :tags, :category))
@@ -10,6 +10,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def search_params_passed?
+    params[:q] || params[:categories] || params[:publishers]
+  end
 
   def perform_search
     return search_by_postgres if params[:not_es_query]
