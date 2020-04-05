@@ -21,7 +21,7 @@ class ArticlesEsQuery
     {
       query: {
         bool: {
-          should: {
+          must: {
             multi_match: {
               query: query.presence || '*',
               type: 'phrase_prefix',
@@ -39,7 +39,7 @@ class ArticlesEsQuery
 
     filters = []
     filters << { terms: { category_id: categories } } if categories.present?
-    filters << { terms: { publisher_id: publishers } } if publishers.present?
+    filters << { terms: { 'publishers.id': publishers } } if publishers.present?
 
     return {} if filters.blank?
 
