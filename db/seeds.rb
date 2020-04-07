@@ -9,7 +9,8 @@ end
 100.times { |i| publishers << Publisher.find_or_create_by!(name: FFaker::Name.name) }
 20.times { |i| categories << Category.find_or_create_by!(name: FFaker::Lorem.word) }
 200.times { |i| tags << Tag.find_or_create_by!(name: FFaker::Lorem.word) }
-100000.times do |i|
+articles_count = ENV['ARTICLES_COUNT'] || 10000
+articles_count.times do |i|
   Article.create!(
     title: FFaker::Lorem.word,
     body: FFaker::Lorem.paragraphs,
