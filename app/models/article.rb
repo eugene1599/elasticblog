@@ -13,7 +13,28 @@ class Article < ApplicationRecord
 
   validates :title, :body, presence: true
 
+  settings do
+    mappings do
+      indexes :title, type: :text
+      indexes :body, type: :text
+      indexes :category_id, type: :long
+      indexes :tags, type: :object do
+        indexes :name, type: :text
+      end
+      indexes :publishers, type: :object do
+        indexes :id, type: :long
+      end
+      indexes :category, type: :object, enabled: false
+    end
+  end
+
   def as_indexed_json(*)
-    as_json(include: { tags: { only: :name }, publishers: { only: %i[id name] }, category: { only: :name } })
+    as_json(
+      include: {
+        tags: { only: :name },
+        publishers: { only: %i[id name] },
+        category: { only: :name }
+      }
+    )
   end
 end
