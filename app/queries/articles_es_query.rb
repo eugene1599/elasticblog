@@ -21,7 +21,7 @@ class ArticlesEsQuery
     {
       query: {
         bool: {
-          must: {
+          should: {
             multi_match: {
               query: query.presence || '*',
               type: 'phrase_prefix',
