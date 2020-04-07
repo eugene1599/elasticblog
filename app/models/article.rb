@@ -13,11 +13,7 @@ class Article < ApplicationRecord
 
   validates :title, :body, presence: true
 
-  def formatted_publishers
-    publishers.pluck(:name).join(', ')
-  end
-
   def as_indexed_json(*)
-    as_json(include: { tags: { only: :name }, publishers: { only: %i[id name] } })
+    as_json(include: { tags: { only: :name }, publishers: { only: %i[id name] }, category: { only: :name } })
   end
 end

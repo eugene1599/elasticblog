@@ -6,7 +6,7 @@ class ArticlesEsQuery
   end
 
   def call
-    Article.pagy_search(build_full_query).records
+    Article.pagy_search(build_full_query)
   end
 
   private

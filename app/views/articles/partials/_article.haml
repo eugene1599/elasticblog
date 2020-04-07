@@ -3,7 +3,7 @@
   %p.blog-post-meta
     = article.created_at
     by
-    = article.formatted_publishers
+    = format_publishers(article.publishers)
   = article.body
   - if article.tags
     %p.blog-post-meta
